@@ -1,6 +1,6 @@
 package com.github.pablo.controllers;
 
-import com.github.pablo.PersonServices;
+import com.github.pablo.services.PersonServices;
 import com.github.pablo.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,7 +27,7 @@ public class PersonController {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Person findById(@PathVariable("id") String id){
+    public Person findById(@PathVariable("id") Long id){
         return services.findById(id);
     }
 
@@ -50,7 +50,7 @@ public class PersonController {
     @RequestMapping(value = "/{id}" ,
             method = RequestMethod.DELETE
     )
-    public void delete(@PathVariable("id") String id){
+    public void delete(@PathVariable("id") Long id){
         services.delete(id);
     }
 
