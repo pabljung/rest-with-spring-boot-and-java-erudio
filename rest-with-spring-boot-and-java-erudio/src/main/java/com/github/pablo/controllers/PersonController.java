@@ -1,6 +1,7 @@
 package com.github.pablo.controllers;
 
-import com.github.pablo.data.dto.PersonDTO;
+import com.github.pablo.data.dto.v1.PersonDTO;
+import com.github.pablo.data.dto.v2.PersonDTOV2;
 import com.github.pablo.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -34,6 +35,14 @@ public class PersonController {
     )
     public PersonDTO create(@RequestBody PersonDTO person){
         return services.create(person);
+    }
+
+    @PostMapping(value = "/v2",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public PersonDTOV2 create(@RequestBody PersonDTOV2 person){
+        return services.createV2(person);
     }
 
     @PutMapping(

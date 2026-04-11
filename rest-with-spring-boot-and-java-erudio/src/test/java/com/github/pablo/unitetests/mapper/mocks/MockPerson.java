@@ -3,7 +3,7 @@ package com.github.pablo.unitetests.mapper.mocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.pablo.data.dto.PersonDTO;
+import com.github.pablo.data.dto.v1.PersonDTO;
 import com.github.pablo.model.Person;
 
 public class MockPerson {
